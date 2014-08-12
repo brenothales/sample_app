@@ -6,6 +6,15 @@
 	  <%= javascript_include_tag "application" %>
 	  <%= csrf_meta_tags %>
 	  <%= render 'layouts/shim' %>
+	  <!-- Dropdown menu was not working on localhost (Rails server) until I added this. -->
+	  <script type="text/javascript">
+      $(function(){
+        $(".dropdown-toggle").click(function(){
+          $(this).dropdown('toggle');
+        });
+      });    
+    </script>
+    <!-- end of javascript to fix dropdown menu issue -->
 	</head>
 	<body>
 		<%= render 'layouts/header' %>
